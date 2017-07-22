@@ -1,3 +1,7 @@
-#new_store_form{
+.new_store_form{
+    display: none;
+}
+
+.new_brand_form{
     display: none;
 }
