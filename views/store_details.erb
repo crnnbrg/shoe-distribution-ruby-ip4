@@ -1,0 +1,26 @@
+<h3>Store <%= @store.name%></h3>
+<hr>
+<h3>Shoe Brands in Stock</h3>
+
+<%if @brands.any?() %>
+    <% @brands.each do |brand| %>
+        <a href="/brands/<%= brand.id%>"><%= brand.name%></a>
+    <%end%>
+<%else%>
+<p>No shoe brand in stock</p>
+<%end%>
+<br>
+<br>
+<button>Stock New Brands</button><br>
+<div>
+    <form action="/stores/new_stock" method="post">
+        <input type="hidden" name="store_id" value="<%= @store.id%>">
+        <label>Select Brand to Stock</label>
+        <select id="select" name="select">
+            <% @allbrands.each do |item|%>
+                <option value="<%= item.id%>"><%= item.name%></option>
+            <%end%>
+        </select>
+        <button type="submit">Stock Brand</button>
+    </form>
+</div>
