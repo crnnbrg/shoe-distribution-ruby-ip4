@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170722061914) do
   create_table "brands", force: :cascade do |t|
     t.string "name", limit: 20
     t.string "category", limit: 20
-    t.string "gender", limit: 10
+    t.string "gender", limit: 20
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
