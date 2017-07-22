@@ -2,7 +2,7 @@
 
 <% if @brands.any?()%>
     <% @brands.each do |brand|%>
-        <%= brand.name%> <br>
+        <a href="/brand/<%= brand.id%>"><%= brand.name%></a><br>
     <%end%>
 <%else%>
     <p>No listed brands</p>
@@ -24,6 +24,4 @@
         <button type="submit" class="submit_brand">Save Brand</button>
     </form>
 </div>
-<hr>
 
-<button>Stock New Brands</button>
