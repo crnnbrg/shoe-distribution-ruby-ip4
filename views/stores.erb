@@ -1,7 +1,7 @@
 <h3>List of Stores</h3>
     <% if @stores.any?()%>
         <% @stores.each do |store|%>
-            <%= store.name%><br>
+            <a href="/store/<%= store.id%>"><%= store.name%></a><br>
         <%end%>
     <%else%>
         <p>No listed stores</p>
