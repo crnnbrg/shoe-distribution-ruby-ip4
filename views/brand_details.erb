@@ -1,0 +1,12 @@
+<h3><%= @brand.name%></h3>
+<p><%= @brand.category%></p>
+<p><%= @brand.gender%></p>
+
+<h3>Store You Can Buy</h3>
+<%if @stores.any?()%>
+    <% @stores.each do |store|%>
+        <a href="/store/<%= store.id%>"><%= store.name%></a><br>
+    <%end%>
+<%else%>
+    <p>No stores selling this brand</p>
+<%end%>
