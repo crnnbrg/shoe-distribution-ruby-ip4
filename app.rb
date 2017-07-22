@@ -25,6 +25,13 @@ get '/store/:id' do
     erb :store_details
 end
 
+get '/brand/:id' do
+    @brand=Brand.find(params.fetch('id').to_i)
+    @stores=Store.joins(:stocks).where(stocks:{brand_id: @brand.id})
+    erb :brand_details
+end
+
+
 post '/stores/new' do
     name=params.fetch('name')
     telephone=params.fetch('telephone')
