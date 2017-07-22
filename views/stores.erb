@@ -1,13 +1,22 @@
 <h3>List of Stores</h3>
     <% if @stores.any?()%>
         <% @stores.each do |store|%>
-            <%= store.name%>
+            <%= store.name%><br>
         <%end%>
     <%else%>
         <p>No listed stores</p>
     <%end%>
-<button id="addnewstore">Add New Store</button>
-<form id="new_store_form" method="post" action="/stores/new">
-    <label>Name:</label>
-    <input type="text" name="name" required>
-</form>
+<button class="newstore" type="button" name="newstore">Add New Store</button>
+<div class="new_store_form">
+    <form method="post" action="/stores/new">
+        <label>Name:</label>
+        <input type="text" name="name" required>        
+        <label>Address:</label>
+        <input type="text" id="address" name="address" required>        
+        <label>Telephone:</label>
+        <input type="telephone" id="telephone" name="telephone" required>        
+        <label>Country:</label>
+        <input type="text" id="country" name="country" required>
+        <button class="submit_store" type="submit">Save Store</button>
+    </form>
+</div>
