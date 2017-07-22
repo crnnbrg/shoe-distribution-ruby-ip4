@@ -1,0 +1,26 @@
+<h3>List of Brands</h3>
+
+<% if @brands.any?()%>
+    <% @brands.each do |brand|%>
+        <%= brand.name%> <br>
+    <%end%>
+<%else%>
+    <p>No listed brands</p>
+<%end%>
+
+<button id="add_brand_btn" type="button">Add Shoe Brand</button>
+
+<div class="new_brand_form">
+    <h4>Add Shoe Brand</h4>
+    <form action="/brands/new" method="post">
+        <label>Name:</label>
+        <input type="text" name="name">       <label>Category:</label>
+        <input type="text" name="category">   <label>Gender:</label>
+        <select id="gender" name="gender">
+            <option value="masculine">Masculine</option>
+            <option value="feminine">Feminine</option>
+            <option value="trans-gender">Trans-Gender</option>
+        </select>
+        <button type="submit" class="submit_brand">Save Brand</button>
+    </form>
+</div>
