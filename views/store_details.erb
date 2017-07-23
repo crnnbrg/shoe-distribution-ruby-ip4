@@ -11,16 +11,16 @@
 <%end%>
 <br>
 <br>
-<button>Stock New Brands</button><br>
-<div>
-    <form action="/stores/new_stock" method="post">
+<!-- <button class="btn">Stock New Brands</button><br> -->
+<div class="col-md-6">
+    <form class="form-group" action="/stores/new_stock" method="post">
         <input type="hidden" name="store_id" value="<%= @store.id%>">
         <label>Select Brand to Stock</label>
-        <select id="select" name="select">
+        <select class="form-control" id="select" name="select">
             <% @allbrands.each do |item|%>
                 <option value="<%= item.id%>"><%= item.name%></option>
             <%end%>
         </select>
-        <button type="submit">Stock Brand</button>
+        <button class="btn" type="submit">Stock Brand</button>
     </form>
 </div>
