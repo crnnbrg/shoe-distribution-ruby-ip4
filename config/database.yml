@@ -1,7 +1,8 @@
 development:
   adapter: postgresql
   database: shoe_distribution_development
-  host: localhost
+  username: 'kitet'
+  password: 'mimi@890'
 test:
   adapter: postgresql
   database: shoe_distribution_test
