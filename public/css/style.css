@@ -1,7 +1,22 @@
-.new_store_form{
-    display: none;
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300');
+
+body {
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://static.pexels.com/photos/250356/pexels-photo-250356.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-.new_brand_form{
-    display: none;
+nav .brand-logo {
+    color: black
+}
+
+nav ul a {
+    color: black;
+}
+
+.home-btns {
+    margin-top: 30%;
 }
