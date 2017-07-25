@@ -1,15 +1,51 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Shoe Distribution</title>
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/css/style.css">
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="/js/script.js"></script>
-    </head>
-    <body>
-        <div class="container-fluid">
-            <%= yield%>
-        </div>
-    </body>
+<html lang="en">
+
+<head>
+    <title>KSD</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="https://cdn3.iconfinder.com/data/icons/beauty-and-spa/512/lotus_flower_relaxation_harmony_wellness-512.png">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <!--Navigation-->
+    <div class="navbar-fixed">
+        <nav id="nav_f" class="white" role="navigation">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/" id="logo-container" class="brand-logo">KSD</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#">Brands</a></li>
+                        <li><a href="#">Stores</a></li>
+                        <li><a href="/about">About</a></li>
+                    </ul>
+                    <ul id="nav-mobile" class="side-nav">
+                        <li><a href="/about">About</a></li>
+                    </ul>
+                    <a href="#" data-activates="nav-mobile" class="button-collapse">
+                            <i class="mdi-navigation-menu"></i>
+                        </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container ">
+        <%= yield %>
+    </div>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript " src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js "></script>
+    <script src="/js/init.js "></script>
+    <script src="/js/script.js"></script>
+</body>
+
 </html>
