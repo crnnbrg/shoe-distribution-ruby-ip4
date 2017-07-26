@@ -1,27 +1,66 @@
-<h3>List of Brands</h3>
-
-<% if @brands.any?()%>
-    <% @brands.each do |brand|%>
-        <a href="/brand/<%= brand.id%>"><%= brand.name%></a><br>
-    <%end%>
-<%else%>
-    <p>No listed brands</p>
-<%end%>
-
-<button class="btn" id="add_brand_btn" type="button">Add Shoe Brand</button>
-
-<div class="new_brand_form">
-    <h4>Add Shoe Brand</h4>
-    <form action="/brands/new" method="post">
-        <label>Name:</label>
-        <input type="text" name="name">       <label>Category:</label>
-        <input type="text" name="category">   <label>Gender:</label>
-        <select id="gender" name="gender">
-            <option value="masculine">Masculine</option>
-            <option value="feminine">Feminine</option>
-            <option value="trans-gender">Trans-Gender</option>
-        </select>
-        <button type="submit" class="btn submit_brand">Save Brand</button>
-    </form>
+<h3 class="center-align white-text">List of Brands</h3>
+<div class="collection">
+    <% if @brands.any?()%>
+        <% @brands.each do |brand|%>
+            <a href="/brand/<%= brand.id%>" class="collection-item">
+                <%= brand.name%>
+            </a>
+            <%end%>
+                <%else%>
+                    <p>No listed brands</p>
+                    <%end%>
 </div>
-
+<br>
+<div class="center">
+    <a href="#add_brand">
+        <button class="btn modal-trigger" id="add_brand_btn" type="button">Add Shoe Brand</button>
+    </a>
+</div>
+<!-- Modal Structure -->
+<div id="add_brand" class="modal bottom-sheet">
+    <div class="modal-content">
+        <div class="container">
+            <h4>Add Shoe Brand</h4>
+            <form action="/brands/new" method="post">
+                <label>Name:</label>
+                <input type="text" name="name">
+                <label>Category:</label>
+                <input type="text" name="category">
+                <label>Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="masculine">Masculine</option>
+                    <option value="feminine">Feminine</option>
+                    <option value="trans-gender">Trans-Gender</option>
+                </select>
+                <button type="submit" class="btn submit_brand">Save Brand</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+    </div>
+</div>
+<!--end modal-->
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+        <div class="container">
+            <h4 class="center-align">NEW STORE</h4>
+            <form method="post" action="/stores/new">
+                <label>Name:</label>
+                <input type="text" name="name" required>
+                <label>Address:</label>
+                <input type="text" id="address" name="address" required>
+                <label>Telephone:</label>
+                <input type="number" id="telephone" name="telephone" required>
+                <label>Country:</label>
+                <input type="text" id="country" name="country" required>
+                <button class="btn submit_store" type="submit">Save Store</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+    </div>
+</div>
+<!--end modal-->
