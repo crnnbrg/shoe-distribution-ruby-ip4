@@ -4,6 +4,8 @@ A program to track shoe brands and what stores they are in.
 
 by: [Kitet](https://github.com/kitet)
 
+[view deployed](https://msksd.herokuapp.com/)
+
 ## Technologies used
 
 `Ruby` `Sinatra` `RSpec` `ActiveRecord` `Rake`
