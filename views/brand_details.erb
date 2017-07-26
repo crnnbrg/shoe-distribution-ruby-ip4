@@ -1,15 +1,47 @@
 <div class="container">
     <div class="row">
-        <h3 class="h3 text-primary"><%= @brand.name%></h3>
-        <p><%= @brand.category%></p>
-        <p><%= @brand.gender%></p>
-        <h3 class="text-success">Store You Can Buy</h3>
-        <%if @stores.any?()%>
-            <% @stores.each do |store|%>
-                <a href="/store/<%= store.id%>"><%= store.name%></a><br>
-            <%end%>
-        <%else%>
-            <p>No stores selling this brand</p>
-        <%end%>
+        <h3 class="white-text center-align"><%= @brand.name%></h3>
+        <p class="center-align white cat">
+            <%= @brand.category%>
+        </p>
+        <br>
+        <p class="center-align white cat">
+            <%= @brand.gender%>
+        </p>
+        <h3 class="green-text center-align">Store You Can Buy</h3>
+        <div class="collection">
+            <%if @stores.any?()%>
+                <% @stores.each do |store|%>
+                    <a href="/store/<%= store.id%>" class="collection-item">
+                        <%= store.name%>
+                    </a>
+                    <%end%>
+                        <%else%>
+                            <p class="white-text center-align">No stores selling this brand</p>
+                            <%end%>
+        </div>
     </div>
 </div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+        <div class="container">
+            <h4 class="center-align">NEW STORE</h4>
+            <form method="post" action="/stores/new">
+                <label>Name:</label>
+                <input type="text" name="name" required>
+                <label>Address:</label>
+                <input type="text" id="address" name="address" required>
+                <label>Telephone:</label>
+                <input type="number" id="telephone" name="telephone" required>
+                <label>Country:</label>
+                <input type="text" id="country" name="country" required>
+                <button class="btn submit_store" type="submit">Save Store</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+    </div>
+</div>
+<!--end modal-->

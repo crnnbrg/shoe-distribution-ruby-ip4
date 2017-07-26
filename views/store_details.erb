@@ -1,26 +1,60 @@
-<h3>Store <%= @store.name%></h3>
-<hr>
-<h3>Shoe Brands in Stock</h3>
-
-<%if @brands.any?() %>
-    <% @brands.each do |brand| %>
-        <a href="/brand/<%= brand.id%>"><%= brand.name%></a>
-    <%end%>
-<%else%>
-<p>No shoe brand in stock</p>
-<%end%>
-<br>
-<br>
-<!-- <button class="btn">Stock New Brands</button><br> -->
-<div class="col-md-6">
-    <form class="form-group" action="/stores/new_stock" method="post">
-        <input type="hidden" name="store_id" value="<%= @store.id%>">
-        <label>Select Brand to Stock</label>
-        <select class="form-control" id="select" name="select">
-            <% @allbrands.each do |item|%>
-                <option value="<%= item.id%>"><%= item.name%></option>
-            <%end%>
-        </select>
-        <button class="btn" type="submit">Stock Brand</button>
-    </form>
+<div class="container  my_store-container brands-bg">
+    <h3 class="center-align white-text"><%= @store.name%></h3>
+    <hr class="grey">
+    <h5 class="center-align white-text">Shoe Brands in Stock</h5>
+    <div class="collection">
+        <%if @brands.any?() %>
+            <% @brands.each do |brand| %>
+                <a href="/brand/<%= brand.id%>" class="collection-item">
+                    <%= brand.name%>
+                </a>
+                <%end%>
+                    <%else%>
+                        <p class="center-align white-text">No shoe brand in stock</p>
+                        <%end%>
+    </div>
+    <br>
+    <br>
+    <!-- <button class="btn">Stock New Brands</button><br> -->
+    <div class="col-md-6">
+        <form class="form-group" action="/stores/new_stock" method="post">
+            <input type="hidden" name="store_id" value="<%= @store.id%>">
+            <div class="input-field select">
+                <select>
+                    <option value="" disabled selected class="white-text">Select Brand</option>
+                    <% @allbrands.each do |item|%>
+                        <option value="<%= item.id%>">
+                            <%= item.name%>
+                        </option>
+                        <%end%>
+                </select>
+            </div>
+            <div class="center">
+                <button class="btn" type="submit">Stock Brand</button>
+            </div>
+        </form>
+    </div>
 </div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+        <div class="container">
+            <h4 class="center-align">NEW STORE</h4>
+            <form method="post" action="/stores/new">
+                <label>Name:</label>
+                <input type="text" name="name" required>
+                <label>Address:</label>
+                <input type="text" id="address" name="address" required>
+                <label>Telephone:</label>
+                <input type="number" id="telephone" name="telephone" required>
+                <label>Country:</label>
+                <input type="text" id="country" name="country" required>
+                <button class="btn submit_store" type="submit">Save Store</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+    </div>
+</div>
+<!--end modal-->

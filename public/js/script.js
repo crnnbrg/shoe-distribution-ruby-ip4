@@ -1,17 +1,19 @@
-$(document).ready(function(){
-    $(".newstore").click(function(){
+$(document).ready(function() {
+    $('select').material_select()
+    $('.modal').modal();
+    $(".newstore").click(function() {
         $(".new_store_form").fadeIn(1500);
     });
 
-    $(".submit_store").click(function(){
+    $(".submit_store").click(function() {
         $(".new_store_form").fadeOut(1500);
     });
 
-    $("#add_brand_btn").click(function(){
+    $("#add_brand_btn").click(function() {
         $(".new_brand_form").fadeIn(1500);
     });
 
-    $(".submit_brand").click(function(){
+    $(".submit_brand").click(function() {
         $(".new_brand_form").fadeOut(1500);
     });
 });
