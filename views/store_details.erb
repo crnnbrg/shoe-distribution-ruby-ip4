@@ -20,10 +20,10 @@
         <form class="form-group" action="/stores/new_stock" method="post">
             <input type="hidden" name="store_id" value="<%= @store.id%>">
             <div class="input-field select">
-                <select>
+                <select id="select" name="select">
                     <option value="" disabled selected class="white-text">Select Brand</option>
                     <% @allbrands.each do |item|%>
-                        <option value="<%= item.id%>">
+                        <option class="white-text" value="<%= item.id%>">
                             <%= item.name%>
                         </option>
                         <%end%>
