@@ -2,7 +2,7 @@
 
 A program to track shoe brands and what stores they are in.
 
-by: [Kitet](http://edwardmudaida.github.io/)
+by: [Kitet](https://github.com/kitet)
 
 ## Technologies used
 
