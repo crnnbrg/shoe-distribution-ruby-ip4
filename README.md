@@ -4,7 +4,7 @@ A program to track shoe brands and what stores they are in.
 
 by: [Kitet](https://github.com/kitet)
 
-[view deployed](https://msksd.herokuapp.com/)
+[view deployed](https://kitetshoedist.herokuapp.com/)
 
 ## Technologies used
 
